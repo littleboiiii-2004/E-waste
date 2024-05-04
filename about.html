@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="sidebar fixed">
+      <div class="form-box">
+        <form class="form">
+          <button class="close"><a href="#">❌</a></button>
+          <span class="title">Sign up</span>
+          <span class="subtitle">Create a free account with your email.</span>
+          <div class="form-container">
+            <input type="text" class="input" placeholder="Full Name" />
+            <input type="email" class="input" placeholder="Email" />
+            <input type="password" class="input" placeholder="Password" />
+          </div>
+          <button class="button">Sign up</button>
+        </form>
+        <div class="form-section">
+          <p>Have an account? <a class="close3 haml3">Log in</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar2 fixed">
+      <div class="form-box">
+        <form class="form">
+          <button class="close2"><a href="#">❌</a></button>
+          <span class="title">Log in</span>
+          <span class="subtitle">Log in to you e-wate using your email</span>
+          <div class="form-container">
+            <input type="text" class="not input" placeholder="Full Name" />
+            <input type="email" class="input" placeholder="Email" />
+            <input type="password" class="input" placeholder="Password" />
+          </div>
+          <button class="button">Log in</button>
+        </form>
+        <div class="form-section">
+          <p>Have an account? <a class="close4 haml4">sign up</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-bar-about">
+      <h1 class="heading">E-Waste Recycling</h1>
+      <ul>
+        <a href="index.html"><li class="ele">Home</li></a>
+        <li class="ele">Contact us</li>
+        <a href="money.html"><li class="ele">Explore</li></a>
+        <a href="campaign.html"><li class="ele">Campaign</li></a>
+        <a href="reward.html"><li class="ele">Rewards</li></a>
+      </ul>
+    </div>
+
+    <section class="features">
+      <div class="feature-head">
+        <h1>E-Waste Management Features</h1>
+        <p>
+          Our platform offers unique features to manage electronic waste <br />
+          efficiently for our university.
+        </p>
+      </div>
+      <div class="feature-body">
+        <div class="f-1">
+          <img src="image_1.webp" class="e-track" />
+          <h2>E-Waste Tracking</h2>
+          <p>Track and manage e-waste disposal in real-time</p>
+        </div>
+        <div class="f-1">
+          <img src="image_2.webp" class="e-img" />
+          <h2>Recycling Partners</h2>
+          <p>Connect with certified e-waste recycling partners</p>
+        </div>
+        <div class="f-1">
+          <img src="image_3.webp" class="e-img" />
+          <h2>E-Waste Tracking</h2>
+          <p>Generate compliance reports with ease</p>
+        </div>
+      </div>
+      <div class="btn">
+        <button class="rev-btn">Join the Revolution</button>
+      </div>
+    </section>
+    <div class="calculator-container">
+      <h1>Recycling Calculator</h1>
+      <div>
+        <label for="device-type">Device Type:</label>
+        <select id="device-type" onclick="hidePlaceholderOption()">
+          <option disabled selected class="default">Type of E-waste</option>
+          <option value="smartphone">Smartphone</option>
+          <option value="laptop">Laptop</option>
+          <option value="tablet">Tablet</option>
+          <option value="television">Television</option>
+          <option value="cd-players">CD-Player</option>
+          <option value="key/mouse">Keyboard/Mouse</option>
+          <option value="headsets">Headphone</option>
+          <option value="earphones">Earphone</option>
+          <option value="earbuds">Earbud</option>
+        </select>
+      </div>
+      <div>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="1" value="1" />
+      </div>
+      <button id="calculate-button">Calculate</button>
+      <div id="result"></div>
+    </div>
+    <div class="calulator-section">
+      <div class="line-1"></div>
+      <div class="line-2"></div>
+      <p>
+        "Join the movement towards sustainable living! Calculate your electronic
+        waste (e-waste) footprint with our user-friendly E-Waste Calculator.
+        Discover the environmental impact of your electronic devices and make
+        informed decisions to reduce, reuse, and recycle. Together, let's pave
+        the way for a cleaner, greener future. Try our E-Waste Calculator
+        today!"
+      </p>
+      <button class="ewaste-btn">Click here</button>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="pallet-1">
+          <div>
+            <p class="footer-text">
+              &copy; 2023 - 2024, E-waste ManagementLtd.
+            </p>
+            <p class="footer-text text--sec">All rights reserved.</p>
+          </div>
+          <div class="icon-logos">
+            <img
+              src="twitter-alt.svg"
+              alt="twitter-logo"
+              class="icon-img img--1"
+            />
+            <ion-icon
+              name="logo-facebook"
+              class="icon-img icon--blue"
+            ></ion-icon>
+            <ion-icon
+              name="logo-instagram"
+              class="icon-img icon--blue"
+            ></ion-icon>
+            <ion-icon
+              name="logo-linkedin"
+              class="icon-img icon--blue"
+            ></ion-icon>
+            <img
+              src="telegram.svg"
+              alt="telegram-logo"
+              class="icon-img img--2 icon--blue"
+            />
+            <ion-icon name="logo-youtube" class="icon-img icon--red"></ion-icon>
+          </div>
+        </div>
+
+        <div class="pallet-2">
+          <ul class="elements-last">
+            <li class="footer-ele header-li">Company</li>
+            <li class="footer-ele">About</li>
+            <li class="footer-ele">Product</li>
+            <li class="footer-ele">Pricing</li>
+            <li class="footer-ele">Referral programme</li>
+            <li class="footer-ele">Careers</li>
+          </ul>
+        </div>
+
+        <div class="pallet-3">
+          <ul class="elements-last">
+            <li class="footer-ele header-li">Support</li>
+            <li class="footer-ele">Contact us</li>
+            <li class="footer-ele">Support portal</li>
+            <li class="footer-ele">List of charges</li>
+            <li class="footer-ele">Downloads % overviews</li>
+            <li class="footer-ele">Videos</li>
+          </ul>
+        </div>
+
+        <div class="pallet-4">
+          <ul class="elements-last">
+            <li class="footer-ele header-li">Account</li>
+            <li class="footer-ele">Register Yourself</li>
+            <li class="footer-ele">Rewards</li>
+            <li class="footer-ele">Campaigns</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="ewaste.js"></script>
+  </body>
+</html>
