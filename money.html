@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en" class="body">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link href="path/to/tailwind.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link href="/dist/output.css" rel="stylesheet"> -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
+
+      * {
+        /* overflow: hidden; */
+        overflow-x: hidden;
+      }
+
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: rgb(236, 255, 236);
+      }
+
+      .box {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        /* height: 55px; */
+        margin: 0px 25px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+      }
+
+      .links {
+        display: flex;
+        margin: 10px 0px;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: auto;
+        /* height: 70px; */
+        user-select: none;
+      }
+
+      .wlink:hover {
+        background-color: rgb(207, 250, 207);
+      }
+
+      .glink {
+        margin-left: 15px;
+        padding: 10px;
+        border: 2px solid rgb(113, 180, 113);
+        background-color: rgb(207, 250, 207);
+        border-radius: 2.4rem;
+        cursor: pointer;
+      }
+
+      .wlink {
+        margin-left: 15px;
+        margin: 5px 1px;
+        padding: 10px;
+        border: 2px solid #f2f2f2;
+        background-color: #f2f2f2;
+        border-radius: 2.4rem;
+        cursor: pointer;
+      }
+
+      .boxmain {
+        height: auto;
+      }
+
+      #box1 {
+        /* background-color: purple; */
+        width: 80vw;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        margin: 110px auto;
+        height: auto;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .photo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        position: relative;
+        align-items: center;
+      }
+
+      .centered {
+        position: absolute;
+        top: 50%;
+        font-size: 3.5rem;
+        text-align: center;
+        font-family: "Quicksand", sans-serif;
+        width: 654px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .photo img {
+        width: 600px;
+        height: auto;
+        border-radius: 100%;
+        opacity: 0.3;
+      }
+
+      #self {
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+        width: auto;
+        /* margin-left: 15px; */
+      }
+      .hello {
+        font-family: "Quicksand", sans-serif;
+        color: rgb(120, 229, 136);
+        font-size: 57px;
+        margin: 5px;
+      }
+
+      @media screen and (min-width: 1372px) {
+        #self {
+          width: 500px;
+        }
+      }
+
+      #name {
+        font-family: "Quicksand", sans-serif;
+        font-size: 50px;
+        margin: 5px;
+      }
+
+      #about {
+        font-family: "Quicksand", sans-serif;
+        font-size: 20px;
+        margin: 5px;
+      }
+
+      .maininfo {
+        display: flex;
+        width: 100vw;
+      }
+
+      .info {
+        margin: 0px auto;
+        width: 30vw;
+        /* width: 50vw; */
+      }
+
+      .button button {
+        width: auto;
+        margin-top: 16px;
+        margin-right: 10px;
+        padding: 5px;
+        color: black;
+        background-color: rgb(186, 247, 191);
+        border-radius: 15px;
+        /* height: 32px; */
+        border: 0px;
+        cursor: pointer;
+      }
+
+      .button button:hover {
+        background-color: rgb(157, 246, 157);
+      }
+
+      section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .imp {
+        margin: 70px 20vw;
+        margin-bottom: 0px;
+        font-size: 3rem;
+      }
+
+      .no {
+        width: 300px;
+        margin: 0px 10vw;
+      }
+
+      .imp b {
+        color: red;
+      }
+
+      @media screen and (max-width: 723px) {
+        .centered {
+          font-size: 7.8vw;
+        }
+
+        .hello {
+          font-size: 7.5vw;
+        }
+
+        #name {
+          font-size: 7.5vw;
+        }
+
+        .info {
+          width: 80vw;
+        }
+
+        .imp {
+          margin: auto 10px;
+        }
+
+        .ok {
+          margin: 20px 0px;
+        }
+
+        .maininfo {
+          flex-wrap: wrap;
+        }
+      }
+
+      .fixed {
+        position: fixed;
+        top: 0px;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+      }
+
+      .stop {
+        overflow: hidden;
+      }
+
+      .not {
+        display: none;
+      }
+
+      .sow {
+        display: block;
+        position: fixed;
+        top: 0px;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+      }
+
+      .form-box {
+        z-index: +3;
+        max-width: 300px;
+        background: #dcecff;
+        overflow: hidden;
+        border-radius: 16px;
+        color: #010101;
+      }
+
+      .form {
+        /* position: relative; */
+        display: flex;
+        flex-direction: column;
+        padding: 32px 24px 24px;
+        gap: 16px;
+        text-align: center;
+        background-color: #fff;
+      }
+
+      /*Form text*/
+      .title {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 1.6rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+        color: #666;
+      }
+
+      /*Inputs box*/
+      .form-container {
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: #fff;
+        margin: 1rem 0 0.5rem;
+        width: 100%;
+      }
+
+      .input {
+        background: none;
+        border: 0;
+        outline: 0;
+        height: 40px;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+
+      .form-section {
+        padding: 16px;
+        font-size: 0.85rem;
+        background-color: #e0ecfb;
+        box-shadow: rgb(0 0 0 / 8%) 0 -1px;
+      }
+
+      .form-section a {
+        font-weight: bold;
+        color: #0066ff;
+        transition: color 0.3s ease;
+      }
+
+      .form-section a:hover {
+        color: #005ce6;
+        text-decoration: underline;
+      }
+
+      /*Button*/
+      .form .button {
+        background-color: #0066ff;
+        color: #fff;
+        border: 0;
+        border-radius: 24px;
+        padding: 10px 16px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .form .button:hover {
+        background-color: #005ce6;
+      }
+
+      .close,
+      .close2 {
+        position: absolute;
+      }
+
+      .close3,
+      .close4 {
+        cursor: pointer;
+      }
+
+      .m-logo {
+        width: 8%;
+      }
+
+      .ml-3 {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="box">
+        <a class="box-l">
+          <span class="ml-3 text-xl"
+            ><img src="logo.png" class="m-logo" />E WASTE</span
+          >
+        </a>
+        <nav class="links">
+          <a href="#" data-page="Home" class="wlink">Home</a>
+          <a href="#" class="wlink" data-page="Aboutus">About</a>
+          <a href="#" data-page="Services" class="wlink">Our services</a>
+          <a
+            href="https://my.atlist.com/map/e4e9259c-6af5-4daa-90c4-4aa04a3d1a1b?share=true"
+            data-page="Locate"
+            class="wlink"
+            >Locate</a
+          >
+        </nav>
+        <div>
+          <button class="haml glink">Register</button>
+          <button class="haml2 glink">log-in</button>
+        </div>
+      </div>
+    </header>
+    <div class="sidebar fixed">
+      <div class="form-box">
+        <form class="form">
+          <button class="close"><a href="#">❌</a></button>
+          <span class="title">Sign up</span>
+          <span class="subtitle">Create a free account with your email.</span>
+          <div class="form-container">
+            <input type="text" class="input" placeholder="Full Name" />
+            <input type="email" class="input" placeholder="Email" />
+            <input type="password" class="input" placeholder="Password" />
+          </div>
+          <button class="button">Sign up</button>
+        </form>
+        <div class="form-section">
+          <p>Have an account? <a class="close3 haml3">Log in</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar2 fixed">
+      <div class="form-box">
+        <form class="form">
+          <button class="close2"><a href="#">❌</a></button>
+          <span class="title">Log in</span>
+          <span class="subtitle">Log in to you e-wate using your email</span>
+          <div class="form-container">
+            <input type="text" class="not input" placeholder="Full Name" />
+            <input type="email" class="input" placeholder="Email" />
+            <input type="password" class="input" placeholder="Password" />
+          </div>
+          <button class="button">Log in</button>
+        </form>
+        <div class="form-section">
+          <p>Have an account? <a class="close4 haml4">sign up</a></p>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="boxmain">
+        <div id="box1">
+          <div id="self">
+            <div class="hello">EARN MONEY</div>
+            <div class="hello">BY SELLING E-WASTE</div>
+            <div id="name">Do you know?</div>
+            <div id="about">
+              India generates around 1.6 million tons of electronic waste every
+              year, out of which, only 32.9% of E-Waste is recycled. Source -
+              Ministry of Environment, Forest and Climate Change.
+            </div>
+            <div class="button">
+              <button>
+                <a
+                  href="https://my.atlist.com/map/e4e9259c-6af5-4daa-90c4-4aa04a3d1a1b?share=true"
+                  >Locate Nearest E-Waste Recycling Center</a
+                >
+              </button>
+              <button>How to get Rewards by selling E-Waste?</button>
+            </div>
+          </div>
+          <div class="photo">
+            <img class="h-80" src="logo.png" alt="logo" />
+            <div class="centered">UNI E WASTE MANAGEMENT!</div>
+          </div>
+        </div>
+        <div class="maininfo">
+          <div class="info">
+            <h1>Did you know?</h1>
+            Unprocessed e-waste poses a risk to health and the environment as it
+            contains several toxic substances such as lead, cadmium, mercury,
+            polychlorinated biphenyls (PCBs), etched chemicals, arsenic and
+            asbestos, which can be hazardous if not disposed of in a scientific
+            manner. If not segregated from other solid waste that finds itself
+            at landfills, these toxic chemicals may leach into the soil and
+            hence pose an environmental risk
+          </div>
+          <div class="flex items-center justify-center no">
+            <img class="ok" src="recycle.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="imp" id="Aboutus"><b>1.</b> About us</div>
+    <section class="text-green-600 body-font">
+      <div class="container px-5 py-10 mx-auto flex flex-wrap">
+        <div class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
+          <div
+            class="h-full w-6 absolute inset-0 flex items-center justify-center"
+          >
+            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+          </div>
+          <div
+            class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-white relative z-10 title-font font-medium text-sm"
+          >
+            1
+          </div>
+          <div
+            class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row"
+          >
+            <div
+              class="flex-shrink-0 w-24 h-24 bg-green-100 text-green-500 rounded-full inline-flex items-center justify-center"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-12 h-12"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+              <h2 class="font-medium title-font text-green-900 mb-1 text-xl">
+                What we do
+              </h2>
+              <p class="leading-relaxed">
+                VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk
+                bespoke try-hard cliche palo santo offal.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+          <div
+            class="h-full w-6 absolute inset-0 flex items-center justify-center"
+          >
+            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+          </div>
+          <div
+            class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-white relative z-10 title-font font-medium text-sm"
+          >
+            2
+          </div>
+          <div
+            class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row"
+          >
+            <div
+              class="flex-shrink-0 w-24 h-24 bg-green-100 text-green-500 rounded-full inline-flex items-center justify-center"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-12 h-12"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+              <h2 class="font-medium title-font text-green-900 mb-1 text-xl">
+                Why we do
+              </h2>
+              <p class="leading-relaxed">
+                VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk
+                bespoke try-hard cliche palo santo offal.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+          <div
+            class="h-full w-6 absolute inset-0 flex items-center justify-center"
+          >
+            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+          </div>
+          <div
+            class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-white relative z-10 title-font font-medium text-sm"
+          >
+            3
+          </div>
+          <div
+            class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row"
+          >
+            <div
+              class="flex-shrink-0 w-24 h-24 bg-green-100 text-green-500 rounded-full inline-flex items-center justify-center"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-12 h-12"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="5" r="3"></circle>
+                <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+              </svg>
+            </div>
+            <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+              <h2 class="font-medium title-font text-green-900 mb-1 text-xl">
+                How we do
+              </h2>
+              <p class="leading-relaxed">
+                VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk
+                bespoke try-hard cliche palo santo offal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="imp" id="Services"><b>2.</b>our services</div>
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+          <div class="p-2 sm:w-1/2 w-full">
+            <div class="bg-green-100 rounded flex p-4 h-full items-center">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-green-500 w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium"
+                >Authentic Cliche Forage</span
+              >
+            </div>
+          </div>
+          <div class="p-2 sm:w-1/2 w-full">
+            <div class="bg-green-100 rounded flex p-4 h-full items-center">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-green-500 w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium"
+                >Kinfolk Chips Snackwave</span
+              >
+            </div>
+          </div>
+          <div class="p-2 sm:w-1/2 w-full">
+            <div class="bg-green-100 rounded flex p-4 h-full items-center">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-green-500 w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium">Coloring Book Ethical</span>
+            </div>
+          </div>
+          <div class="p-2 sm:w-1/2 w-full">
+            <div class="bg-green-100 rounded flex p-4 h-full items-center">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-green-500 w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium"
+                >Typewriter Polaroid Cray</span
+              >
+            </div>
+          </div>
+          <div class="p-2 sm:w-1/2 w-full">
+            <div class="bg-green-100 rounded flex p-4 h-full items-center">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-green-500 w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium">Pack Truffaut Blue</span>
+            </div>
+          </div>
+          <div class="p-2 sm:w-1/2 w-full">
+            <div class="bg-green-100 rounded flex p-4 h-full items-center">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-green-500 w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium">The Catcher In The Rye</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-green-300 text-gray-400 body-font">
+      <div
+        class="bg-green-300 container px-5 py-20 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col"
+      >
+        <div
+          class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left"
+        >
+          <a
+            class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+          >
+            <img class="w-12" src="logo.png" alt="logo" />
+            <span class="ml-3 text-xl">E WASTE</span>
+          </a>
+          <p class="mt-2 text-sm text-gray-500">
+            Leading towards a better Environment.
+          </p>
+        </div>
+        <div
+          class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center"
+        >
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              CATEGORIES
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">First Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+              </li>
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              CATEGORIES
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">First Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+              </li>
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              CATEGORIES
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">First Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+              </li>
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              CATEGORIES
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">First Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+              </li>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="container mx-auto py-5 px-15 flex flex-wrap flex-col sm:flex-row"
+        >
+          <p class="text-white-600 text-sm text-center sm:text-left">
+            © 2020 Tailblocks —
+            <a
+              href="https://twitter.com/knyttneve"
+              rel="noopener noreferrer"
+              class="text-white-600 ml-1"
+              target="_blank"
+              >@knyttneve</a
+            >
+          </p>
+          <span
+            class="inline-flex sm:ml-auto sm:mt-0 mt-1 justify-center sm:justify-center"
+          >
+            <a class="text-gray-500">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-7 text-gray-500">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-7 text-gray-500">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-7 text-gray-500">
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="0"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script>
+      $("a").click(function () {
+        var pageId = $(this).attr("data-page");
+        $("html, body").animate(
+          { scrollTop: $("#" + pageId).offset().top },
+          1000
+        );
+      });
+    </script>
+    <script src="ewaste.js"></script>
+  </body>
+</html>

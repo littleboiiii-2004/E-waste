@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Educational Resources</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-image: url(anne-nygard-v5mEr9CfG18-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .tabcontent p {
+        color: white;
+      }
+
+      .tabs button {
+        color: white;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .top-class {
+        background-color: transparent;
+        color: white;
+      }
+
+      .edu-ele {
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .footer-ele,
+      .footer-text,
+      .icon-img {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top-class">
+      <h1>Educational Resources</h1>
+      <nav class="edu-nav">
+        <ul>
+          <li><a href="index.html" class="edu-ele">Home</a></li>
+          <li>
+            <a href="recycling-events.html" class="edu-ele">Recycling Events</a>
+          </li>
+          <li><a href="campaign.html" class="edu-ele">Campaigns</a></li>
+          <li><a href="reward.html" class="edu-ele">Rewards</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="tabs">
+        <button class="tablink active" onclick="openTopic(event, 'importance')">
+          Importance
+        </button>
+        <button class="tablink" onclick="openTopic(event, 'impact')">
+          Environmental Impact
+        </button>
+        <button class="tablink" onclick="openTopic(event, 'practices')">
+          Best Practices
+        </button>
+      </div>
+
+      <div id="importance" class="tabcontent">
+        <h2>Importance of E-Waste Recycling</h2>
+        <p>
+          Recycling e-waste is not only an environmental imperative but also a
+          social and economic necessity. It conserves resources, reduces
+          pollution, mitigates climate change, and promotes a more sustainable
+          approach to consumption and waste management. Let's understand better
+          through a video
+        </p>
+        <iframe
+          width="300"
+          height="215"
+          src="https://www.youtube.com/embed/eT34ypRodB0?si=Cjm_5JjrOtcLpe2A"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div id="impact" class="tabcontent" style="display: none">
+        <h2>Environmental Impact of E-Waste</h2>
+        <p>
+          Insert your educational content about the environmental impact of
+          e-waste here.
+        </p>
+        <img src="impact.jpg" alt="Environmental Impact" />
+      </div>
+
+      <div id="practices" class="tabcontent" style="display: none">
+        <h2>Best Practices for E-Waste Disposal</h2>
+        <ul>
+          <li>Dispose of old electronics at designated recycling centers.</li>
+          <li>Avoid throwing e-waste in regular trash bins.</li>
+          <li>Consider donating or selling usable electronics.</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="pallet-1">
+          <div>
+            <p class="footer-text">
+              &copy; 2023 - 2024, E-waste ManagementLtd.
+            </p>
+            <p class="footer-text text--sec">All rights reserved.</p>
+          </div>
+          <div class="icon-logos">
+            <img
+              src="twitter-alt.svg"
+              alt="twitter-logo"
+              class="icon-img img--1"
+            />
+            <ion-icon
+              name="logo-facebook"
+              class="icon-img icon--blue"
+            ></ion-icon>
+            <ion-icon
+              name="logo-instagram"
+              class="icon-img icon--blue"
+            ></ion-icon>
+            <ion-icon
+              name="logo-linkedin"
+              class="icon-img icon--blue"
+            ></ion-icon>
+            <img
+              src="telegram.svg"
+              alt="telegram-logo"
+              class="icon-img img--2 icon--blue"
+            />
+            <ion-icon name="logo-youtube" class="icon-img icon--red"></ion-icon>
+          </div>
+        </div>
+
+        <div class="pallet-2">
+          <ul class="elements-last">
+            <li class="footer-ele header-li">Company</li>
+            <li class="footer-ele">About</li>
+            <li class="footer-ele">Product</li>
+            <li class="footer-ele">Pricing</li>
+            <li class="footer-ele">Referral programme</li>
+            <li class="footer-ele">Careers</li>
+          </ul>
+        </div>
+
+        <div class="pallet-3">
+          <ul class="elements-last">
+            <li class="footer-ele header-li">Support</li>
+            <li class="footer-ele">Contact us</li>
+            <li class="footer-ele">Support portal</li>
+            <li class="footer-ele">List of charges</li>
+            <li class="footer-ele">Downloads % overviews</li>
+            <li class="footer-ele">Videos</li>
+          </ul>
+        </div>
+
+        <div class="pallet-4">
+          <ul class="elements-last">
+            <li class="footer-ele header-li">Account</li>
+            <li class="footer-ele">Register Yourself</li>
+            <li class="footer-ele">Rewards</li>
+            <li class="footer-ele">Campaigns</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Include your JavaScript file -->
+  </body>
+</html>
+<!-- https://youtu.be/ApdkhWd7SfQ?si=Ppyeoz0iBGZz1rDC -->
